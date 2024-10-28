@@ -1,5 +1,6 @@
 use clap::Parser;
 use colored::*;
+use num_format::{Locale, ToFormattedString};
 use serde::Deserialize;
 use std::collections::HashMap;
 
@@ -111,7 +112,11 @@ async fn print_country_info(country: &str) {
                 );
                 println!("{}: {:?}", "Timezones".bold().blue(), info.timezones);
                 println!("{}: {:?}", "TLD".bold().blue(), info.tld);
-                println!("{}: {}", "Population".bold().blue(), info.population);
+                println!(
+                    "{}: {}",
+                    "Population".bold().blue(),
+                    info.population.to_formatted_string(&Locale::en)
+                );
                 println!(
                     "{}: {:?}",
                     "Continent".bold().blue(),
