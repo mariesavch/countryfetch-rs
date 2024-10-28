@@ -7,7 +7,7 @@ use std::collections::HashMap;
 #[command(name = "countryfetch")]
 #[command(about = "Fetches country information from the REST Countries API", long_about = None)]
 struct Args {
-    #[arg(short, long)]
+    #[arg()]
     country: String,
 }
 
