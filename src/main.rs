@@ -132,7 +132,10 @@ async fn print_country_info(country: &str) {
                 println!(
                     "{}: {:?}",
                     "Currencies".bold().blue(),
-                    info.currencies.values().collect::<Vec<&Currency>>()
+                    info.currencies
+                        .values()
+                        .map(|c| format!("{} ({})", c.name, c.symbol))
+                        .collect::<Vec<String>>()
                 );
                 println!(
                     "{}: {:?}",
