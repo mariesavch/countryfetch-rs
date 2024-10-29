@@ -1,1 +1,1 @@
-![countryfetch preview](./prewiew.png) 
+![countryfetch preview](./preview.png) 
