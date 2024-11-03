@@ -16,56 +16,38 @@ struct Args {
 struct CountryData {
     #[serde(rename = "capitalInfo")]
     capital_info: CapitalInfo,
-    #[serde(rename = "name")]
     name: Name,
-    #[serde(rename = "tld")]
     tld: Vec<String>,
     capital: Vec<String>,
-    #[serde(rename = "region")]
     region: String,
-    #[serde(rename = "subregion")]
     subregion: String,
-    #[serde(rename = "latlng")]
     latlng: Vec<f64>,
-    #[serde(rename = "flag")]
     flag: String,
-    #[serde(rename = "population")]
     population: u64,
-    #[serde(rename = "timezones")]
     timezones: Vec<String>,
-    #[serde(rename = "languages")]
     languages: HashMap<String, String>,
-    #[serde(rename = "currencies")]
     currencies: HashMap<String, Currency>,
-    #[serde(rename = "borders")]
     borders: Option<Vec<String>>,
-    #[serde(rename = "continents")]
     continents: Option<Vec<String>>,
-    #[serde(rename = "landlocked")]
     landlocked: bool,
     #[serde(rename = "startOfWeek")]
     start_of_week: String,
-    #[serde(rename = "maps")]
     maps: Maps,
 }
 
 #[derive(Deserialize, Debug)]
 struct Currency {
-    #[serde(rename = "name")]
     name: String,
-    #[serde(rename = "symbol")]
     symbol: String,
 }
 
 #[derive(Deserialize, Debug)]
 struct CapitalInfo {
-    #[serde(rename = "latlng")]
     latlng: Vec<f64>,
 }
 
 #[derive(Deserialize, Debug)]
 struct Name {
-    #[serde(rename = "official")]
     official: String,
 }
 
